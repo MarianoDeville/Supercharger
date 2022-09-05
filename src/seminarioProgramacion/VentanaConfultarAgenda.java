@@ -12,6 +12,7 @@ import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTextField;
 
 public class VentanaConfultarAgenda extends Ventanas {
 
@@ -22,6 +23,7 @@ public class VentanaConfultarAgenda extends Ventanas {
 	private JComboBox<Object> comboBoxEspecialidad;
 	private JComboBox<Object> comboBoxMes;
 	private JComboBox<Object> comboBoxDia;
+	private JTextField txtNombreApellido;
 
 	public VentanaConfultarAgenda(String nombreVentana) {
 
@@ -34,7 +36,7 @@ public class VentanaConfultarAgenda extends Ventanas {
 		
 		scrollTabla = new JScrollPane();
 		sl_contentPane.putConstraint(SpringLayout.NORTH, scrollTabla, 57, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, scrollTabla, -72, SpringLayout.SOUTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, scrollTabla, -108, SpringLayout.SOUTH, contentPane);
 		contentPane.add(scrollTabla);
 		agenda = new JTable();
 		agenda.setModel(new DefaultTableModel(
@@ -52,7 +54,7 @@ public class VentanaConfultarAgenda extends Ventanas {
 
 		JLabel lblEspecialidad = new JLabel("Especialidad:");
 		sl_contentPane.putConstraint(SpringLayout.NORTH, lblEspecialidad, 10, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, lblEspecialidad, 0, SpringLayout.WEST, scrollTabla);
+		sl_contentPane.putConstraint(SpringLayout.WEST, lblEspecialidad, 11, SpringLayout.WEST, contentPane);
 		contentPane.add(lblEspecialidad);
 		
 		comboBoxEspecialidad = new JComboBox<Object>();
@@ -100,5 +102,17 @@ public class VentanaConfultarAgenda extends Ventanas {
 		sl_contentPane.putConstraint(SpringLayout.NORTH, btnAgendar, 0, SpringLayout.NORTH, btnVolver);
 		sl_contentPane.putConstraint(SpringLayout.EAST, btnAgendar, -50, SpringLayout.WEST, btnVolver);
 		contentPane.add(btnAgendar);
+		
+		JLabel lblNombreApellido = new JLabel("Nombre y apellido del cliente:");
+		sl_contentPane.putConstraint(SpringLayout.NORTH, lblNombreApellido, 19, SpringLayout.SOUTH, scrollTabla);
+		sl_contentPane.putConstraint(SpringLayout.WEST, lblNombreApellido, 10, SpringLayout.WEST, contentPane);
+		contentPane.add(lblNombreApellido);
+		
+		txtNombreApellido = new JTextField();
+		sl_contentPane.putConstraint(SpringLayout.NORTH, txtNombreApellido, 0, SpringLayout.NORTH, lblNombreApellido);
+		sl_contentPane.putConstraint(SpringLayout.WEST, txtNombreApellido, 6, SpringLayout.EAST, lblNombreApellido);
+		sl_contentPane.putConstraint(SpringLayout.EAST, txtNombreApellido, 400, SpringLayout.EAST, lblNombreApellido);
+		contentPane.add(txtNombreApellido);
+		txtNombreApellido.setColumns(10);
 	}
 }
