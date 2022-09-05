@@ -36,8 +36,8 @@ public class VentanaFichaTaller extends Ventanas {
 		
 		JComboBox comboBoxClientes = new JComboBox();
 		sl_contentPane.putConstraint(SpringLayout.NORTH, comboBoxClientes, 25, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, comboBoxClientes, 110, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, comboBoxClientes, 500, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.WEST, comboBoxClientes, 135, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, comboBoxClientes, 550, SpringLayout.WEST, contentPane);
 		contentPane.add(comboBoxClientes);
 		
 		JLabel lblTiempo = new JLabel("Tiempo de trabajo:");
@@ -47,8 +47,8 @@ public class VentanaFichaTaller extends Ventanas {
 		
 		txtTiempoTrabajo = new JTextField();
 		sl_contentPane.putConstraint(SpringLayout.NORTH, txtTiempoTrabajo, 0, SpringLayout.NORTH, lblTiempo);
-		sl_contentPane.putConstraint(SpringLayout.WEST, txtTiempoTrabajo, 110, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, txtTiempoTrabajo, 500, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.WEST, txtTiempoTrabajo, 135, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, txtTiempoTrabajo, 550, SpringLayout.WEST, contentPane);
 		contentPane.add(txtTiempoTrabajo);
 		txtTiempoTrabajo.setColumns(10);
 		
@@ -59,8 +59,8 @@ public class VentanaFichaTaller extends Ventanas {
 		
 		txtTrabajoRealizado = new JTextField();
 		sl_contentPane.putConstraint(SpringLayout.NORTH, txtTrabajoRealizado, 0, SpringLayout.NORTH, lblTipoTrabajo);
-		sl_contentPane.putConstraint(SpringLayout.WEST, txtTrabajoRealizado, 110, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, txtTrabajoRealizado, 500, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.WEST, txtTrabajoRealizado, 135, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, txtTrabajoRealizado, 550, SpringLayout.WEST, contentPane);
 		contentPane.add(txtTrabajoRealizado);
 		txtTrabajoRealizado.setColumns(10);
 				
@@ -71,8 +71,8 @@ public class VentanaFichaTaller extends Ventanas {
 		
 		txtMaterialesUsados = new JTextField();
 		sl_contentPane.putConstraint(SpringLayout.NORTH, txtMaterialesUsados, 0, SpringLayout.NORTH, lblMateriales);
-		sl_contentPane.putConstraint(SpringLayout.WEST, txtMaterialesUsados, 110, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, txtMaterialesUsados, 500, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.WEST, txtMaterialesUsados, 135, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, txtMaterialesUsados, 550, SpringLayout.WEST, contentPane);
 		contentPane.add(txtMaterialesUsados);
 		txtMaterialesUsados.setColumns(10);
 		
@@ -83,8 +83,8 @@ public class VentanaFichaTaller extends Ventanas {
 				
 		JComboBox comboBoxMecanico = new JComboBox();
 		sl_contentPane.putConstraint(SpringLayout.NORTH, comboBoxMecanico, 0, SpringLayout.NORTH, lblMecanico);
-		sl_contentPane.putConstraint(SpringLayout.WEST, comboBoxMecanico, 110, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, comboBoxMecanico, 500, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.WEST, comboBoxMecanico, 135, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, comboBoxMecanico, 550, SpringLayout.WEST, contentPane);
 		contentPane.add(comboBoxMecanico);
 		
 		JButton btnVolver = new JButton("Volver");

@@ -16,7 +16,6 @@ import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-
 public class VentanaRegistrarAsistencia extends Ventanas {
 
 	private static final long serialVersionUID = 1L;

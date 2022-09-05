@@ -100,7 +100,5 @@ public class VentanaRecepcion extends Ventanas {
 		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnVolver, -22, SpringLayout.SOUTH, contentPane);
 		sl_contentPane.putConstraint(SpringLayout.EAST, btnVolver, -22, SpringLayout.EAST, contentPane);
 		contentPane.add(btnVolver);
-
 	}
-
 }

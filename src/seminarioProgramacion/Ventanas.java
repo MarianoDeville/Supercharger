@@ -17,5 +17,4 @@ public abstract class Ventanas extends JFrame {
 	//	setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setMinimumSize(new Dimension(600, 500));
 	}
-
 }

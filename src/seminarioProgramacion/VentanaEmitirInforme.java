@@ -68,5 +68,4 @@ public class VentanaEmitirInforme extends Ventanas {
 		sl_contentPane.putConstraint(SpringLayout.EAST, btnVolver, -10, SpringLayout.EAST, contentPane);
 		contentPane.add(btnVolver);
 	}
-
 }

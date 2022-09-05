@@ -174,5 +174,4 @@ public class VentanaNuevoCliente extends Ventanas {
 		sl_contentPane.putConstraint(SpringLayout.EAST, btnGuardar, -31, SpringLayout.WEST, btnVolver);
 		contentPane.add(btnGuardar);
 	}
-
 }
