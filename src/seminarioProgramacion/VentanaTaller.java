@@ -1,5 +1,6 @@
 package seminarioProgramacion;
 
+import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,35 +17,33 @@ public class VentanaTaller extends Ventanas {
 	public VentanaTaller(String nombreVentana) {
 
 		super(nombreVentana);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		SpringLayout sl_contentPane = new SpringLayout();
 		contentPane.setLayout(sl_contentPane);
 		
 		JButton btnCargarFicha = new JButton("Cargar ficha");
+		sl_contentPane.putConstraint(SpringLayout.EAST, btnCargarFicha, 220, SpringLayout.WEST, contentPane);
 		btnCargarFicha.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							VentanaFichaTaller frame = new VentanaFichaTaller("Ficha trabajos realizados");
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		sl_contentPane.putConstraint(SpringLayout.NORTH, btnCargarFicha, 50, SpringLayout.NORTH, contentPane);
 		sl_contentPane.putConstraint(SpringLayout.WEST, btnCargarFicha, 30, SpringLayout.WEST, contentPane);
 		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnCargarFicha, 110, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnCargarFicha, 180, SpringLayout.WEST, contentPane);
 		contentPane.add(btnCargarFicha);
-						
-		JButton btnImprimirConformidad = new JButton("Imprimir conformidad");
-		btnImprimirConformidad.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnImprimirConformidad, 50, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnImprimirConformidad, 200, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnImprimirConformidad, 110, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnImprimirConformidad, 350, SpringLayout.WEST, contentPane);
-		contentPane.add(btnImprimirConformidad);
 		
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {

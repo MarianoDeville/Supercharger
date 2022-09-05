@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Supercharger">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="C:/Users/maria/eclipse/java-2021-09/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="17"/>
+    <property name="source" value="17"/>
+    <path id="Supercharger.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.osgi_3.18.0.v20220516-2155.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.core.commands_3.10.200.v20220512-0851.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.equinox.common_3.16.100.v20220315-2327.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.equinox.registry_3.11.100.v20211021-1418.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.core.runtime_3.25.0.v20220506-1157.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.text_3.12.100.v20220506-1404.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.swt.win32.win32.x86_64_3.120.0.v20220530-1036.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.jface_3.26.0.v20220513-0449.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.jface.text_3.20.100.v20220516-0819.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.ui.workbench_3.125.100.v20220524-1304.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/com.ibm.icu_67.1.0.v20200706-1749.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.ui.forms_3.11.300.v20211022-1451.jar"/>
+        <pathelement location="jgoodies-common-1.8.0.jar"/>
+        <pathelement location="jgoodies-forms-1.8.0.jar"/>
+    </path>
+    <path id="run.Supercharger.classpath">
+        <path refid="Supercharger.classpath"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.osgi_3.18.0.v20220516-2155.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.core.commands_3.10.200.v20220512-0851.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.equinox.common_3.16.100.v20220315-2327.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.equinox.registry_3.11.100.v20211021-1418.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.core.runtime_3.25.0.v20220506-1157.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.text_3.12.100.v20220506-1404.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.swt.win32.win32.x86_64_3.120.0.v20220530-1036.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.jface_3.26.0.v20220513-0449.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.jface.text_3.20.100.v20220516-0819.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.ui.workbench_3.125.100.v20220524-1304.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/com.ibm.icu_67.1.0.v20200706-1749.jar"/>
+        <pathelement location="C:/Users/maria/.p2/pool/plugins/org.eclipse.ui.forms_3.11.300.v20211022-1451.jar"/>
+        <pathelement location="jgoodies-common-1.8.0.jar"/>
+        <pathelement location="jgoodies-forms-1.8.0.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="Imagenes">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <src path="Imagenes"/>
+            <classpath refid="Supercharger.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="Supercharger">
+        <java classname="seminarioProgramacion.Supercharger" failonerror="true" fork="yes">
+            <classpath refid="run.Supercharger.classpath"/>
+        </java>
+    </target>
+</project>

@@ -1,5 +1,6 @@
 package seminarioProgramacion;
 
+import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -15,34 +16,46 @@ public class VentanaAdministracion extends Ventanas {
 	public VentanaAdministracion(String nombreVentana) {
 
 		super(nombreVentana);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		SpringLayout sl_contentPane = new SpringLayout();
 		contentPane.setLayout(sl_contentPane);
 		
 		JButton btnEmitirInforme = new JButton("Emitir informe");
+		sl_contentPane.putConstraint(SpringLayout.EAST, btnEmitirInforme, 220, SpringLayout.WEST, contentPane);
 		btnEmitirInforme.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							VentanaEmitirInforme frame = new VentanaEmitirInforme("Informe mensual");
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		sl_contentPane.putConstraint(SpringLayout.NORTH, btnEmitirInforme, 50, SpringLayout.NORTH, contentPane);
 		sl_contentPane.putConstraint(SpringLayout.WEST, btnEmitirInforme, 30, SpringLayout.WEST, contentPane);
 		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnEmitirInforme, 110, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnEmitirInforme, 180, SpringLayout.WEST, contentPane);
 		contentPane.add(btnEmitirInforme);
 						
 		JButton btnGestionarLiquidaciones = new JButton("Gestionar liquidaciones");
+		sl_contentPane.putConstraint(SpringLayout.NORTH, btnGestionarLiquidaciones, 48, SpringLayout.SOUTH, btnEmitirInforme);
+		sl_contentPane.putConstraint(SpringLayout.WEST, btnGestionarLiquidaciones, 30, SpringLayout.WEST, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnGestionarLiquidaciones, -243, SpringLayout.SOUTH, contentPane);
+		sl_contentPane.putConstraint(SpringLayout.EAST, btnGestionarLiquidaciones, 0, SpringLayout.EAST, btnEmitirInforme);
 		btnGestionarLiquidaciones.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				
+				
 			}
 		});
-		sl_contentPane.putConstraint(SpringLayout.NORTH, btnGestionarLiquidaciones, 50, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.WEST, btnGestionarLiquidaciones, 200, SpringLayout.WEST, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.SOUTH, btnGestionarLiquidaciones, 110, SpringLayout.NORTH, contentPane);
-		sl_contentPane.putConstraint(SpringLayout.EAST, btnGestionarLiquidaciones, 350, SpringLayout.WEST, contentPane);
 		contentPane.add(btnGestionarLiquidaciones);
 		
 		JButton btnVolver = new JButton("Volver");

@@ -13,9 +13,9 @@ public abstract class Ventanas extends JFrame {
 		setTitle(nombreVentana);
 		setIconImage(Toolkit.getDefaultToolkit().getImage("E:\\Java\\Eclipse\\Supercharger\\Imagenes\\Logo.png"));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(10, 10, 400, 400);
+		setBounds(10, 10, 600, 500);
 	//	setExtendedState(JFrame.MAXIMIZED_BOTH);
-		setMinimumSize(new Dimension(400, 400));
+		setMinimumSize(new Dimension(600, 500));
 	}
 
 }
